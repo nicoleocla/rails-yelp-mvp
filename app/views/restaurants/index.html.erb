@@ -1,0 +1,22 @@
+<table>
+  <head>
+    <th>Name</th>
+    <th>Adress</th>
+    <th>Phone Number</th>
+    <th>Category</th>
+    <th colspan="4"></th>
+  </head>
+  <tbody>
+    <div>
+      <%= link_to " + Add new restaurant", new_restaurant_path  %>
+    </div>
+    <% @restaurants.each do |restaurant| %>
+    <tr>
+      <td><%= link_to "#{restaurant.name}", restaurant_path(restaurant) %></td>
+      <td><%= link_to "#{restaurant.address}", restaurant_path(restaurant) %></td>
+      <td><%= link_to "#{restaurant.phone_number}", restaurant_path(restaurant) %></td>
+      <td><%= link_to "#{restaurant.category}", restaurant_path(restaurant) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
